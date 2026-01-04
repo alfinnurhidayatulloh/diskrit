@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Matematika Diskrit dengan Pemrograman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #2090ff;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .desc {
+            background: #f4faff;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #007BFF;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Matematika Diskrit dengan Pemrograman</h1>
+
+<div class="desc">
+<b>Apa itu Matematika Diskrit?</b><br>
+Matematika diskrit adalah cabang matematika yang mempelajari objek-objek yang bersifat
+terpisah (diskrit). Matematika ini sangat penting dalam
+ilmu komputer dan pemrograman, karena hampir semua program bekerja dengan data diskrit.
+</div>
+
+<div style="text-align:center;">
+    <button onclick="logika()">Logika</button>
+    <button onclick="himpunan()">Himpunan</button>
+    <button onclick="fungsi()">Fungsi</button>
+    <button onclick="relasi()">Relasi</button>
+    <button onclick="graf()">Graf</button>
+</div>
+
+<div id="output">Klik tombol untuk melihat penjelasan dan contoh...</div>
+
+<script>
+    function logika() {
+        let a = true;
+        let b = false;
+
+        let hasil = "LOGIKA MATEMATIKA\n\n";
+        hasil += "Logika adalah dasar pengambilan keputusan dalam pemrograman.\n";
+        hasil += "Logika menggunakan nilai BENAR (true) dan SALAH (false).\n\n";
+        hasil += "Contoh operasi logika:\n";
+        hasil += "a = true, b = false\n";
+        hasil += "a AND b = " + (a && b) + "\n";
+        hasil += "a OR b  = " + (a || b) + "\n";
+        hasil += "NOT a   = " + (!a) + "\n\n";
+        hasil += "Logika digunakan pada percabangan (if-else) dan validasi data.";
+
+        document.getElementById("output").innerText = hasil;
+    }
+
+    function himpunan() {
+        let A = [1, 2, 3];
+        let B = [3, 4, 5];
+
+        let union = [...new Set([...A, ...B])];
+        let irisan = A.filter(x => B.includes(x));
+        let selisih = A.filter(x => !B.includes(x));
+
+        let hasil = "HIMPUNAN\n\n";
+        hasil += "Himpunan adalah kumpulan objek yang didefinisikan dengan jelas.\n\n";
+        hasil += "Contoh:\n";
+        hasil += "A = {1, 2, 3}\n";
+        hasil += "B = {3, 4, 5}\n\n";
+        hasil += "Operasi pada himpunan:\n";
+        hasil += "Union (Gabungan) = { " + union + " }\n";
+        hasil += "Irisan (Perpotongan) = { " + irisan + " }\n";
+        hasil += "Selisih A-B = { " + selisih + " }\n\n";
+        hasil += "Himpunan sering digunakan untuk mengelola data tanpa duplikasi.";
+
+        document.getElementById("output").innerText = hasil;
+    }
+
+    function fungsi() {
+        let hasil = "FUNGSI\n\n";
+        hasil += "Fungsi adalah pemetaan dari satu nilai ke nilai lainnya.\n";
+        hasil += "Dalam pemrograman, fungsi digunakan untuk memecah program\n";
+        hasil += "menjadi bagian-bagian kecil agar mudah dipahami.\n\n";
+        hasil += "Contoh fungsi f(x) = x²\n\n";
+
+        for (let i = 1; i <= 5; i++) {
+            hasil += "f(" + i + ") = " + (i * i) + "\n";
+        }
+
+        document.getElementById("output").innerText = hasil;
+    }
+
+    function relasi() {
+        let mahasiswa = {
+            "4124026": "Alfin",
+            "4124025": "nafis",
+            "4124016": "Tata"
+        };
+
+        let hasil = "RELASI\n\n";
+        hasil += "Relasi adalah hubungan antara dua himpunan.\n";
+        hasil += "Contoh: hubungan antara NIM dan Nama Mahasiswa.\n\n";
+
+        for (let nim in mahasiswa) {
+            hasil += nim + " → " + mahasiswa[nim] + "\n";
+        }
+
+        hasil += "\nRelasi banyak digunakan dalam database dan sistem informasi.";
+
+        document.getElementById("output").innerText = hasil;
+    }
+
+    function graf() {
+        let graf = {
+            A: ["B", "C"],
+            B: ["C"],
+            C: []
+        };
+
+        let hasil = "GRAF\n\n";
+        hasil += "Graf adalah struktur yang terdiri dari simpul (vertex)\n";
+        hasil += "dan sisi (edge) yang menghubungkan simpul-simpul tersebut.\n\n";
+        hasil += "Contoh graf:\n";
+
+        for (let simpul in graf) {
+            hasil += simpul + " → " + graf[simpul].join(", ") + "\n";
+        }
+
+        hasil += "\nGraf digunakan dalam peta, jaringan komputer, dan media sosial.";
+
+        document.getElementById("output").innerText = hasil;
+    }
+</script>
+
+</body>
+</html>
